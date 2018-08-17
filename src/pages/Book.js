@@ -6,8 +6,6 @@ import Header from '../component/Header'
 import Footer from '../component/Footer'
 import './Book.css'
 
-// const DatePicker = require('react-bootstrap-date-picker')
-
 export default class Book extends Component {
 
     state = {
