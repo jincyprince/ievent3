@@ -1,6 +1,6 @@
 import { getToken } from "./authentication";
-const dbURI = '';
 
+var dbURI = '';
 if (process.env.NODE_ENV === 'production') {
     dbURI = 'https://ievent-db.herokuapp.com/'
 } else {
