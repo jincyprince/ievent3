@@ -1,4 +1,5 @@
 import { getToken } from "./authentication";
+const dbURI = require('../config/keys').dbURI;
 
 function loginRequest({ email, password }) {
     return new Promise((resolve, reject) => {
@@ -24,7 +25,7 @@ function loginRequest({ email, password }) {
 
 function showBooking({ city, sport }) {
     return new Promise((resolve, reject) => {
-        fetch("http://localhost:5000/schools/city/"+city+"/"+sport, {
+        fetch(dbURI + "schools/city/" + city + "/" + sport, {
             method: "get",
             headers: {
                 "Content-Type": "application/json; charset=utf-8"
@@ -39,9 +40,9 @@ function showBooking({ city, sport }) {
         }).catch(e => reject(e))
     });
 }
-function createLogin({email,password}){
+function createLogin({ email, password }) {
     return new Promise((resolve, reject) => {
-        fetch("http://localhost:5000/user/register", {
+        fetch(dbURI + "user/register", {
             method: "post",
             headers: {
                 "Content-Type": "application/json; charset=utf-8"
@@ -55,14 +56,14 @@ function createLogin({email,password}){
                 if (!response.ok) {
                     return reject(json);
                 }
-                resolve({msg:'User created'});
+                resolve({ msg: 'User created' });
             }).catch(e => reject(e));
         }).catch(e => reject(e))
     });
 }
-function createBooking({city,sports,school,date,duration,time}){
+function createBooking({ city, sports, school, date, duration, time }) {
     return new Promise((resolve, reject) => {
-        fetch("http://localhost:5000/book", {
+        fetch(dbURI + "book", {
             method: "post",
             headers: {
                 "Content-Type": "application/json; charset=utf-8"
@@ -80,7 +81,7 @@ function createBooking({city,sports,school,date,duration,time}){
                 if (!response.ok) {
                     return reject(json);
                 }
-                resolve({msg:'User created'});
+                resolve({ msg: 'User created' });
             }).catch(e => reject(e));
         }).catch(e => reject(e))
     });
