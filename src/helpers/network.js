@@ -1,17 +1,18 @@
 import { getToken } from "./authentication";
 
-var dbURI = '';
-if (process.env.NODE_ENV === 'production') {
-    dbURI = 'https://ievent-db.herokuapp.com/'
-} else {
-    dbURI = 'http://localhost:5000/'
-}
+// var dbURI = '';
+// if (process.env.NODE_ENV === 'production') {
+//     dbURI = 'https://ievent-db.herokuapp.com/'
+// } else {
+//     dbURI = 'http://localhost:5000/'
+// }
 
+const dbURI = 'https://ievent-db.herokuapp.com/'
 
 
 function loginRequest({ email, password }) {
     return new Promise((resolve, reject) => {
-        fetch("http://localhost:5000/user/login", {
+        fetch(dbURI + "user/login", {
             method: "post",
             headers: {
                 "Content-Type": "application/json; charset=utf-8"
