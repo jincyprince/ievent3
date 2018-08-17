@@ -1,0 +1,12 @@
+#mc_embed_signup {
+    /* background: rgba(255, 255, 255, 0.5); */
+    clear: left;
+    font: 14px Helvetica, Arial, sans-serif;
+    width: 100%;
+    text-align: center;
+}
+
+#mc_embed_signup .email-container {
+    position: absolute;
+    left: -5000px;
+}
