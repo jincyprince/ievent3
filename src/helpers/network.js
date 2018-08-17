@@ -1,5 +1,13 @@
 import { getToken } from "./authentication";
-const dbURI = require('../config/keys').dbURI;
+const dbURI = '';
+
+if (process.env.NODE_ENV === 'production') {
+    dbURI = 'https://ievent-db.herokuapp.com/'
+} else {
+    dbURI = 'http://localhost:5000/'
+}
+
+
 
 function loginRequest({ email, password }) {
     return new Promise((resolve, reject) => {
