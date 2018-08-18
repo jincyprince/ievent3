@@ -1,13 +1,14 @@
 import { getToken } from "./authentication";
+import { dbURI } from "../consts";
 
-// var dbURI = '';
-// if (process.env.NODE_ENV === 'production') {
-//     dbURI = 'https://ievent-db.herokuapp.com/'
-// } else {
-//     dbURI = 'http://localhost:5000/'
-// }
+// // var dbURI = '';
+// // if (process.env.NODE_ENV === 'production') {
+// //     dbURI = 'https://ievent-db.herokuapp.com/'
+// // } else {
+// //     dbURI = 'http://localhost:5000/'
+// // }
 
-const dbURI = 'https://ievent-db.herokuapp.com/'
+// const dbURI = 'https://ievent-db.herokuapp.com/'
 
 
 function loginRequest({ email, password }) {
